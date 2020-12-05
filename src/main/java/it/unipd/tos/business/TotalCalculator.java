@@ -23,7 +23,9 @@ public class TotalCalculator implements TakeAwayBill {
         if (items.contains(null)) {
             throw new TakeAwayBillException("nessun elemento nella lista");
         }
-
+        if (items.size() > 30) {
+            throw new TakeAwayBillException("30 elementi");
+       }
         for(MenuItem i: items) {
             totale +=i.getPrezzo();
             if (i.getItemTipo() == MenuItem.type.Gelato) {

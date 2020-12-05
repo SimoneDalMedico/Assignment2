@@ -66,5 +66,11 @@ public class TotalCalculatorTest {
 		totale = calcola.getOrderPrice(list, user);
 		assertEquals(90.00,totale,Diff);
 	}
-			
+	@Test(expected = TakeAwayBillException.class) 
+	public void massimo30Test() throws TakeAwayBillException {
+		for(int i=0; i<32; i++) {
+			list.add(new MenuItem(MenuItem.type.Gelato,"Cioccolato",8.00));
+		}
+		totale = calcola.getOrderPrice(list,user);
+	}	
 }
