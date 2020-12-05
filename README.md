@@ -6,4 +6,4 @@
 
 ## COVERAGE STATUS
 
-[![Coverage Status](https://coveralls.io/repos/github/SimoneDalMedico/Assignment2/badge.svg?branch=master)](https://coveralls.io/github/SimoneDalMedico/Assignment2?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/SimoneDalMedico/Assignment2/badge.png?branch=master)](https://coveralls.io/github/SimoneDalMedico/Assignment2?branch=master)

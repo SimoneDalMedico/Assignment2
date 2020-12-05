@@ -33,7 +33,7 @@ public class UserTest {
 	public void invalidEtaTest() {
 		boolean b = true;
 		if(user.getEta()<0)
-			b = false;
+		b = false;
 		assertEquals(true, b);
 	}
 }
