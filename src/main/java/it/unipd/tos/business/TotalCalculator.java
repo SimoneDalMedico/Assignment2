@@ -10,7 +10,7 @@ import it.unipd.tos.business.exception.TakeAwayBillException;
 
 public class TotalCalculator implements TakeAwayBill {
     public double getOrderPrice(List < MenuItem > items, User user) throws TakeAwayBillException {
-    	 double totale = 0.0;   
+         double totale = 0.0;   
          int numGel=0;
          MenuItem GelMenoCost=null;      
 
