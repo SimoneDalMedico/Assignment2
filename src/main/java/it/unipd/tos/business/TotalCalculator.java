@@ -10,7 +10,9 @@ import it.unipd.tos.business.exception.TakeAwayBillException;
 
 public class TotalCalculator implements TakeAwayBill {
     public double getOrderPrice(List < MenuItem > items, User user) throws TakeAwayBillException {
-        double totale = 0.0;        
+    	 double totale = 0.0;   
+         int numGel=0;
+         MenuItem GelMenoCost=null;      
 
 
         if (items == null) {
@@ -18,13 +20,23 @@ public class TotalCalculator implements TakeAwayBill {
         }
 
         if (items.contains(null)) {
-            throw new TakeAwayBillException("Nessun elemento nella lista");
+            throw new TakeAwayBillException("Nessun Elemento nella lista");
         }
 
-        //costo
-        for (MenuItem i: items) { 
-            totale += i.getPrezzo();           
-        }
+        for(MenuItem i: items) {
+            totale +=i.getPrezzo();
+            if (i.getItemTipo() == MenuItem.type.Gelato) {
+                numGel++;
+
+                if ((GelMenoCost == null) || (GelMenoCost.getPrezzo() > i.getPrezzo())) {
+                    GelMenoCost = i;
+                }
+            }
+
+            } 
+            if (numGel > 5) {
+                totale -= GelMenoCost.getPrezzo() * 0.5;
+            }
         return totale;     
     }
 }
